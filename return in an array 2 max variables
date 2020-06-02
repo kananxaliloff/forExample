@@ -1,0 +1,23 @@
+package main
+
+import (
+	"fmt"
+	"sort"
+)
+
+func main() {
+	s := TwoOldestAges([]int{1, 5, 87, 45, 8, 8})
+	fmt.Println(s)
+}
+
+func TwoOldestAges(ages []int) [2]int {
+	var returnArray [2]int
+	sort.Ints(ages)
+	for i := len(ages) - 2; i <= len(ages)-1; i++ {
+		for j := 0; j <= 1; j++ {
+			returnArray[j] = ages[i]
+			i++
+		}
+	}
+	return returnArray
+}
